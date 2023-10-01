@@ -157,7 +157,7 @@ main {
 
 .gototop {
     position: fixed;
-    right: -10%;
+    right: -100px;
     bottom: 50px;
     width: 45px;
     height: 45px;
@@ -648,6 +648,12 @@ footer .social-media a {
         scale: 1.05;
         transition: 1s;
     }
+    .home-content h1 {
+        font-size: 45px;
+    }
+    .home-content>p , .home h2{
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -673,6 +679,8 @@ footer .social-media a {
     .pd {
         text-align: justify;
         padding: 0;
+        margin-top: 40px;
+        font-size: 17px;
     }
 
     .show-nav {
@@ -691,6 +699,14 @@ footer .social-media a {
     .home {
         text-align: center;
         background: linear-gradient(170deg, var(--blue) 10%, var(--white) 10%, var(--white) 90%, var(--blue) 90%);
+    }
+
+    
+    .home-content h1 {
+        font-size: 35px;
+    }
+    .home-content>p , .home h2{
+        font-size: 27px;
     }
 
     .home-content h2 br {
