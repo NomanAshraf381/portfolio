@@ -108,6 +108,7 @@ window.addEventListener('scroll', () => {
     }
 })
 
+
 allLi.forEach((listitem) => {
     listitem.addEventListener('click', () => {
         let secTop = document.getElementById(listitem.getAttribute('contain')).offsetTop - 50;
