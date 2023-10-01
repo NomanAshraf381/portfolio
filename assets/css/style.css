@@ -179,7 +179,10 @@ main {
 .home {
     text-align: center;
     background: linear-gradient(170deg, var(--blue) 15%, var(--transparent) 15%, var(--transparent) 85%, var(--blue) 85%);
+    /* background: url(../img/background\ -\ Copy\ \(2\).jpg) no-repeat right; */
+    /* background-size: cover; */
 }
+
 
 section {
     padding: 30px 5%;
@@ -351,9 +354,11 @@ section>h2::after {
 }
 
 .home-content h2 span {
+    /* padding: 3px; */
     color: var(--gold);
-
+    /* background-color: white; */
 }
+
 
 .home-content h1 {
     font-size: 56px;
@@ -399,6 +404,7 @@ section>h2::after {
     display: inline-block;
     width: 40px;
     height: 40px;
+    background-color: var(--white);
     box-shadow: 0 0 30px var(--shadow);
     border-radius: 50%;
     font-size: 20px;
@@ -494,6 +500,7 @@ section>h2::after {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 30px;
     width: 100%;
+    padding-bottom: 30px;
 }
 
 .project-card {
@@ -698,7 +705,7 @@ footer .social-media a {
 
     .home {
         text-align: center;
-        background: linear-gradient(170deg, var(--blue) 10%, var(--white) 10%, var(--white) 90%, var(--blue) 90%);
+        /* background: linear-gradient(170deg, var(--blue) 10%, var(--white) 10%, var(--white) 90%, var(--blue) 90%); */
     }
 
     
