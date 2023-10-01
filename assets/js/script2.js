@@ -33,7 +33,7 @@ window.addEventListener('scroll', function () {
         goto.style.right = '5%';
     }
     else {
-        goto.style.right = '-10%'
+        goto.style.right = '-100px'
     }
 })
 goto.addEventListener('click', gotop)
@@ -107,7 +107,6 @@ window.addEventListener('scroll', () => {
         })
     }
 })
-
 
 allLi.forEach((listitem) => {
     listitem.addEventListener('click', () => {
