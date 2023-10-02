@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('https://formspree.io/f/mknlpbkp', {
         method: "POST",
         body: JSON.stringify({
-            subject: "My Portfolio (UseTogether) Visited By a User"
+            subject: "My Portfolio (Netlify) Visited By a User"
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
