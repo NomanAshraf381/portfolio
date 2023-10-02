@@ -43,10 +43,17 @@ function gotop() {
 
 let ourLoaderScreen = document.querySelector('.loading-screen')
 document.addEventListener('DOMContentLoaded', function () {
+    fetch('https://formspree.io/f/mknlpbkp', {
+        method: "POST",
+        body: JSON.stringify({
+            subject: "My Portfolio (UseTogether) Visited By a User"
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
     ourLoaderScreen.classList.add('disappear');
 });
-
-
 
 var current;
 let allSections = document.querySelectorAll('section');
@@ -107,7 +114,6 @@ window.addEventListener('scroll', () => {
         })
     }
 })
-
 
 allLi.forEach((listitem) => {
     listitem.addEventListener('click', () => {
