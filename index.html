@@ -32,6 +32,11 @@
         </nav>
         <i id="tbars" class="fa-solid fa-bars"></i>
     </header>
+    <div class="modal-message">
+        <p>Message Sent Successfully</p>
+        <img src="assets/img/messagesent.gif" alt="message sent">
+        <span>&times;</span>
+    </div>
     <main>
         <div class="gototop"><i class="fa-solid fa-arrow-up"></i></div>
         <section id="home" class="home sactive">
@@ -144,7 +149,7 @@
                 <div class="Subject">
                     <input type="text" name="subject" id="subject" placeholder="Subject">
                 </div>
-                <textarea placeholder="Message" id="message" name="message" id="" cols="30" rows="10"></textarea>
+                <textarea placeholder="Message" id="message" name="message" id="message" cols="30" rows="10"></textarea>
                 <button onclick="sendmessage(event)">Send Message</button>
             </form>
         </section>
