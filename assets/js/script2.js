@@ -54,15 +54,15 @@ function gotop() {
 
 let ourLoaderScreen = document.querySelector('.loading-screen')
 document.addEventListener('DOMContentLoaded', function () {
-    // fetch('https://formspree.io/f/mknlpbkp', {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //         subject: "My Portfolio (UseTogether) Visited By a User"
-    //     }),
-    //     headers: {
-    //         'Content-type': 'application/json; charset=UTF-8',
-    //     },
-    // })
+    fetch('https://formspree.io/f/mknlpbkp', {
+        method: "POST",
+        body: JSON.stringify({
+            subject: "My Portfolio (UseTogether) Visited By a User"
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
     ourLoaderScreen.classList.add('disappear');
 });
 
@@ -161,7 +161,6 @@ window.addEventListener('scroll', () => {
         })
     }
 })
-
 
 allLi.forEach((listitem) => {
     listitem.addEventListener('click', () => {
