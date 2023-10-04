@@ -1,4 +1,5 @@
-document.querySelector('main').addEventListener('click', hidenav)
+let ourMain = document.querySelector('main');
+ourMain.addEventListener('click', hidenav)
 tbars.addEventListener("click", shownav)
 function shownav() {
     nav.classList.toggle("show-nav")
@@ -6,8 +7,18 @@ function shownav() {
 }
 function hidenav() {
     nav.classList.remove("show-nav")
-
 }
+
+const modal= document.querySelector('.modal-message');
+let modalxmark = modal.querySelector('span')
+modalxmark.addEventListener('click', modalHIde)
+function modalShow(){
+    modal.classList.add('showmodal');
+}
+function modalHIde(){
+    modal.classList.remove('showmodal')
+}
+
 
 var typed = new Typed(".multiple-text", {
     strings: ["Front End Developer", "a Student"],
@@ -46,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('https://formspree.io/f/mknlpbkp', {
         method: "POST",
         body: JSON.stringify({
-            subject: "My Portfolio (Netlify) Visited By a User"
+            subject: "My Portfolio (UseTogether) Visited By a User"
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -54,6 +65,41 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     ourLoaderScreen.classList.add('disappear');
 });
+
+function sendmessage(event){
+    event.preventDefault();
+    var userMessageSubject = document.querySelector('#subject');
+    var userName = document.querySelector('#fname');
+    var userEmail = document.querySelector('#email');
+    var userMessage = document.querySelector('#message');
+    if(userEmail != "" && userName != "" && userMessage != "" && userMessageSubject != ""){
+        fetch('https://formspree.io/f/xyyqbnok', {
+            method: "POST",
+            body: JSON.stringify({
+                subject: userMessageSubject.value,
+                Name: userName.value,
+                Email: userEmail.value,
+                Message: userMessage.value
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }).then(()=>{
+            modal.querySelector('p').innerHTML = "Message Sent Successfully";
+            modal.querySelector('img').src = "assets/img/messagesent.gif";
+            modalShow();
+            userEmail.value = '';
+            userMessage.value = '';
+            userMessageSubject.value = '';
+            userName.value = '';
+        })
+    }
+    else{
+        modal.querySelector('img').src = "assets/img/notsent.webp";
+        modal.querySelector('p').innerHTML = "Please Fill Out All Fields";
+        modalShow();
+    }
+}
 
 var current;
 let allSections = document.querySelectorAll('section');
@@ -114,6 +160,7 @@ window.addEventListener('scroll', () => {
         })
     }
 })
+
 
 allLi.forEach((listitem) => {
     listitem.addEventListener('click', () => {
