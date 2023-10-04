@@ -54,15 +54,15 @@ function gotop() {
 
 let ourLoaderScreen = document.querySelector('.loading-screen')
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://formspree.io/f/mknlpbkp', {
-        method: "POST",
-        body: JSON.stringify({
-            subject: "My Portfolio (UseTogether) Visited By a User"
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
+    // fetch('https://formspree.io/f/mknlpbkp', {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //         subject: "My Portfolio (UseTogether) Visited By a User"
+    //     }),
+    //     headers: {
+    //         'Content-type': 'application/json; charset=UTF-8',
+    //     },
+    // })
     ourLoaderScreen.classList.add('disappear');
 });
 
@@ -72,7 +72,7 @@ function sendmessage(event){
     var userName = document.querySelector('#fname');
     var userEmail = document.querySelector('#email');
     var userMessage = document.querySelector('#message');
-    if(userEmail != "" && userName != "" && userMessage != "" && userMessageSubject != ""){
+    if(userEmail.value != "" && userName.value != "" && userMessage.value != "" && userMessageSubject.value != ""){
         fetch('https://formspree.io/f/xyyqbnok', {
             method: "POST",
             body: JSON.stringify({
@@ -95,6 +95,7 @@ function sendmessage(event){
         })
     }
     else{
+        console.log(modal.querySelector('img').src)
         modal.querySelector('img').src = "assets/img/notsent.webp";
         modal.querySelector('p').innerHTML = "Please Fill Out All Fields";
         modalShow();
