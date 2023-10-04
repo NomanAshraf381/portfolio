@@ -85,20 +85,19 @@ function sendmessage(event){
                 'Content-type': 'application/json'
             }
         }).then(()=>{
-            modal.querySelector('p').innerHTML = "Message Sent Successfully";
-            modal.querySelector('img').src = "assets/img/messagesent.gif";
             modalShow();
             userEmail.value = '';
             userMessage.value = '';
             userMessageSubject.value = '';
             userName.value = '';
+            modal.querySelector('p').innerHTML = "Message Sent Successfully";
+            modal.querySelector('img').src = "assets/img/messagesent.gif";
         })
     }
     else{
-        console.log(modal.querySelector('img').src)
+        modalShow();
         modal.querySelector('img').src = "assets/img/notsent.webp";
         modal.querySelector('p').innerHTML = "Please Fill Out All Fields";
-        modalShow();
     }
 }
 
@@ -147,17 +146,17 @@ window.addEventListener('scroll', () => {
         skillProgressed = true;
         let skills = document.querySelectorAll('.skill');
         skills.forEach((skill) => {
-                let rotation = parseInt(skill.getAttribute('fill')) * 3.6;
-                var xz = 0;
-                increase();
-                function increase() {
-                    if (xz <= rotation) {
-                        skill.querySelector('.skill-track').style.background = `conic-gradient(var(--blue) ${xz}deg, var(--white) ${xz}deg, var(--white))`;
-                        skill.querySelector('p').innerText = `${Math.floor(xz / 3.6)}%`;
-                        xz = xz + 3;
-                        setTimeout(increase, 5);
-                    }
+            let rotation = parseInt(skill.getAttribute('fill')) * 3.6;
+            var xz = 0;
+            increase();
+            function increase() {
+                if (xz <= rotation) {
+                    skill.querySelector('.skill-track').style.background = `conic-gradient(var(--blue) ${xz}deg, var(--white) ${xz}deg, var(--white))`;
+                    skill.querySelector('p').innerText = `${Math.floor(xz / 3.6)}%`;
+                    xz = xz + 3;
+                    setTimeout(increase, 5);
                 }
+            }
         })
     }
 })
