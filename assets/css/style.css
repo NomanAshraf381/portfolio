@@ -19,6 +19,41 @@
     font-family: sans-serif;
 }
 
+.modal-message{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: var(--white);
+    min-width: 300px;
+    min-height: 300px;
+    box-shadow: 0 0 50px var(--shadow);
+    padding: 80px 20px 20px;
+}
+.modal-message span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: default;
+    padding: 10px 18px;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 35px;
+}
+
+.modal-message p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.modal-message.showmodal{
+    display: block;
+}
+
 .loading-screen {
     position: fixed;
     width: 100vw;
