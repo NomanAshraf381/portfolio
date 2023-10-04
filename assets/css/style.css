@@ -178,8 +178,6 @@ main {
 .home {
     text-align: center;
     background: linear-gradient(170deg, var(--blue) 15%, var(--transparent) 15%, var(--transparent) 85%, var(--blue) 85%);
-    /* background: url(../img/background\ -\ Copy\ \(2\).jpg) no-repeat right; */
-    /* background-size: cover; */
 }
 
 
@@ -578,12 +576,8 @@ section>h2::after {
     background-color: var(--facebook);
 }
 
-
 footer {
     text-align: center;
-}
-
-footer {
     background-color: #0ef;
     margin-top: 70px;
 }
@@ -595,57 +589,29 @@ footer .social-media {
 footer .social-media a {
     background-color: var(--background);
     box-shadow: none;
+    margin: 0;
+    margin-right: 15px;
     z-index: 2;
 }
 
-.upper-footer {
-    gap: 20px;
+.foot-cover {
+    padding: 30px 5%;
     display: flex;
-    flex-wrap: wrap;
-    padding: 50px 5%;
     align-items: center;
+    gap: 20px;
     justify-content: space-between;
 }
 
-.contact-me {
-    display: flex;
-}
 
-.contact-me button,
-.contact-me input {
-    font-size: 18px;
-    border: none;
-    z-index: 2;
-}
 
-.contact-me input {
-    outline: 0;
-    padding: 17px 20px;
-    min-width: 300px;
-    border-radius: 20px 0 0 20px;
-}
-
-.contact-me button {
-    font-weight: 700;
-    color: var(--white);
-    background-color: var(--blue);
-    padding: 15px 20px;
-    border-radius: 0 20px 20px 0;
-}
-
-.copyright {
-    padding: 20px 5%;
-    border-top: 1px solid var(--hr);
-}
-
-.copyright p {
+.foot-cover p {
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 1px;
 
 }
 
-.copyright p span {
+.foot-cover p span {
     color: var(--blue);
 }
 
@@ -704,7 +670,6 @@ footer .social-media a {
 
     .home {
         text-align: center;
-        /* background: linear-gradient(170deg, var(--blue) 10%, var(--white) 10%, var(--white) 90%, var(--blue) 90%); */
     }
 
     
@@ -731,24 +696,8 @@ footer .social-media a {
         gap: 30px;
         width: 100%;
     }
-
-    .contact {
-        padding: 50px 20px 30px;
-    }
-
-    .contact form div:first-of-type {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-    }
-
-    .contact-me input {
-        min-width: 150px;
-        width: 70%;
-        padding: 15px 12px;
-    }
-
-    .contacme button {
-        width: 30%;
-        padding: 15px 12px;
+    .foot-cover {
+        flex-direction: column;
+        justify-content: center;
     }
 }
