@@ -217,7 +217,7 @@ main {
     background-color: var(--white);
     border: 1px solid var(--blue);
     transition: 1s;
-    cursor: default;
+    cursor: pointer;
 }
 
 .gototop:hover {
