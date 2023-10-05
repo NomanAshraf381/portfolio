@@ -3,22 +3,23 @@ ourMain.addEventListener('click', hidenav)
 tbars.addEventListener("click", shownav)
 function shownav() {
     nav.classList.toggle("show-nav")
-
 }
 function hidenav() {
     nav.classList.remove("show-nav")
 }
 
-const modal= document.querySelector('.modal-message');
-let modalxmark = modal.querySelector('span')
-modalxmark.addEventListener('click', modalHIde)
+const ParentModal= document.querySelector('.modal-message-box');
+const modalClose= ParentModal.querySelector('.modal-message-cl');
+const modal= ParentModal.querySelector('.modal-message');
+let modalxmark = modal.querySelector('span');
+modalxmark.addEventListener('click', modalHIde);
+modalClose.addEventListener('click', modalHIde);
 function modalShow(){
-    modal.classList.add('showmodal');
+    ParentModal.classList.add('showmodal');
 }
 function modalHIde(){
-    modal.classList.remove('showmodal')
+    ParentModal.classList.remove('showmodal')
 }
-
 
 var typed = new Typed(".multiple-text", {
     strings: ["Front End Developer", "a Student"],
@@ -47,6 +48,7 @@ window.addEventListener('scroll', function () {
         goto.style.right = '-100px'
     }
 })
+
 goto.addEventListener('click', gotop)
 function gotop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -54,15 +56,6 @@ function gotop() {
 
 let ourLoaderScreen = document.querySelector('.loading-screen')
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://formspree.io/f/mknlpbkp', {
-        method: "POST",
-        body: JSON.stringify({
-            subject: "My Portfolio (UseTogether) Visited By a User"
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
     ourLoaderScreen.classList.add('disappear');
 });
 
