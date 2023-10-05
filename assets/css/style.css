@@ -616,6 +616,7 @@ section>h2::after {
     width: 100%;
     padding: 15px;
     border: none;
+    cursor: pointer;
     color: var(--white);
     font-weight: 550;
     border-radius: 5px;
