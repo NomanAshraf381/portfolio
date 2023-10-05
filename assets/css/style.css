@@ -641,7 +641,7 @@ footer .social-media a {
     background-color: var(--background);
     box-shadow: none;
     margin: 0;
-    margin-right: 15px;
+    margin-left: 15px;
     z-index: 2;
 }
 
