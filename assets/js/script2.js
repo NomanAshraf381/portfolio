@@ -96,22 +96,28 @@ function sendmessage(event){
 
 var current;
 let allSections = document.querySelectorAll('section');
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', sectionop)
+let allLi = document.querySelectorAll('nav ul li');
+
+sectionop()
+function sectionop() {
     for (let sect of allSections) {
         if (pageYOffset + 500 > sect.offsetTop) {
-            if (sect.offsetTop < pageYOffset + 200 && sect.offsetTop + 10 > pageYOffset) {
+            if (sect.offsetTop < pageYOffset + 450 && sect.offsetTop + 10 > pageYOffset) {
                 sect.classList.add('secActive')
                 current = sect.getAttribute('id');
                 navAction(current)
+                console.log(current)
             }
         }
     }
-})
-let allLi = document.querySelectorAll('nav ul li');
+}
+
 function navAction(sectionid) {
     allLi.forEach((li) => {
+        console.log(li)
         li.classList.remove('p-at')
-        if (li.getAttribute('contain') == sectionid) {
+        if (li.getAttribute('data-contain') == sectionid) {
             li.classList.add('p-at')
         }
     })
@@ -131,32 +137,10 @@ skills.forEach((skill) => {
         }
     })
 })
-var skillProgressed = false;
-window.addEventListener('scroll', () => {
-    let secTop = document.getElementById('skills').offsetTop;
-    let pageTop = pageYOffset + 100;
-    if (secTop <= pageTop && skillProgressed == false) {
-        skillProgressed = true;
-        let skills = document.querySelectorAll('.skill');
-        skills.forEach((skill) => {
-            let rotation = parseInt(skill.getAttribute('fill')) * 3.6;
-            var xz = 0;
-            increase();
-            function increase() {
-                if (xz <= rotation) {
-                    skill.querySelector('.skill-track').style.background = `conic-gradient(var(--blue) ${xz}deg, var(--white) ${xz}deg, var(--white))`;
-                    skill.querySelector('p').innerText = `${Math.floor(xz / 3.6)}%`;
-                    xz = xz + 3;
-                    setTimeout(increase, 5);
-                }
-            }
-        })
-    }
-})
 
 allLi.forEach((listitem) => {
     listitem.addEventListener('click', () => {
-        let secTop = document.getElementById(listitem.getAttribute('contain')).offsetTop - 50;
+        let secTop = document.getElementById(listitem.getAttribute('data-contain')).offsetTop - 50;
         window.scrollTo({ top: secTop, behavior: "smooth" })
     })
 })
