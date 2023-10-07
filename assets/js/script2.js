@@ -125,7 +125,7 @@ function navAction(sectionid) {
 let skills = document.querySelectorAll('.skill');
 skills.forEach((skill) => {
     skill.addEventListener('mouseenter', () => {
-        let rotation = parseInt(skill.getAttribute('fill')) * 3.6;
+        let rotation = parseInt(skill.getAttribute('data-fill')) * 3.6;
         var xz = 0;
         increase();
         function increase() {
