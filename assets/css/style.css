@@ -235,21 +235,6 @@ section {
     padding: 30px 5%;
 }
 
-section.secActive {
-    animation: secAnimation 1s forwards;
-}
-
-@keyframes secAnimation {
-    0% {
-        box-shadow: inset 0 0 10px blue;
-
-    }
-
-    100% {
-        box-sizing: none;
-    }
-}
-
 #about {
     padding-top: 50px;
 }
@@ -666,6 +651,7 @@ footer .social-media a {
     color: var(--blue);
 }
 
+
 @media screen and (min-width: 1200px) {
     .project-card:hover img {
         scale: 1.05;
@@ -676,6 +662,17 @@ footer .social-media a {
     }
     .home-content>p , .home h2{
         font-size: 30px;
+    }
+    section{
+        transform: translate(-100%);
+    }
+    section.secActive {
+        animation: sectionmove 1s forwards;
+    }
+    @keyframes sectionmove {
+        100%{
+            transform: translate(0);
+        }
     }
 }
 
