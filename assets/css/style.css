@@ -654,7 +654,7 @@ footer .social-media a {
 
 @media screen and (min-width: 1200px) {
     .project-card:hover img {
-        scale: 1.05;
+        transform: scale(1.05);
         transition: 1s;
     }
     .home-content h1 {
