@@ -103,11 +103,10 @@ sectionop()
 function sectionop() {
     for (let sect of allSections) {
         if (pageYOffset + 500 > sect.offsetTop) {
-            if (sect.offsetTop < pageYOffset + 450 && sect.offsetTop + 10 > pageYOffset) {
+            if (sect.offsetTop < pageYOffset + 350 && sect.offsetTop + 10 > pageYOffset) {
                 sect.classList.add('secActive')
                 current = sect.getAttribute('id');
                 navAction(current)
-                console.log(current)
             }
         }
     }
@@ -115,7 +114,6 @@ function sectionop() {
 
 function navAction(sectionid) {
     allLi.forEach((li) => {
-        console.log(li)
         li.classList.remove('p-at')
         if (li.getAttribute('data-contain') == sectionid) {
             li.classList.add('p-at')
